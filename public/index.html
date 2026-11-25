@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AbleUp: Jobs for everyone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#results">Skip to results</a>
+
+  <header class="top">
+    <h1>AbleUp</h1>
+    <p class="tag">Find work with employers who value inclusion.</p>
+    <div class="tools" role="group" aria-label="Display settings">
+      <button type="button" id="smaller" aria-label="Decrease text size">A−</button>
+      <button type="button" id="larger" aria-label="Increase text size">A+</button>
+      <button type="button" id="contrast" aria-pressed="false">High contrast</button>
+    </div>
+  </header>
+
+  <main>
+    <form id="searchForm" role="search">
+      <label for="q">Job title or skill (leave empty to see the latest jobs)</label>
+      <input id="q" name="q" type="search" maxlength="100" placeholder="e.g. data entry, designer">
+      <label for="region">Where can you work from?</label>
+      <select id="region">
+        <option value="">Anywhere</option><option value="worldwide">Worldwide</option>
+        <option value="africa">Africa</option><option value="europe">Europe</option>
+        <option value="usa">USA</option>
+      </select>
+      <button type="submit" id="go">Search jobs</button>
+    </form>
+
+    <section id="filters" hidden aria-label="Refine results">
+      <label for="word">Filter by word</label>
+      <input id="word" type="search" placeholder="title or employer">
+      <label for="type">Job type</label>
+      <select id="type">
+        <option value="">Any</option><option value="FULLTIME">Full-time</option>
+        <option value="PARTTIME">Part-time</option><option value="CONTRACTOR">Contract</option>
+        <option value="INTERN">Internship</option>
+      </select>
+      <label for="sort">Sort by</label>
+      <select id="sort">
+        <option value="newest">Newest</option><option value="title">Title A–Z</option>
+        <option value="employer">Employer A–Z</option><option value="inclusive">Most inclusive signals</option>
+      </select>
+      <label class="check"><input type="checkbox" id="inclusiveOnly"> Only jobs mentioning inclusion or accommodations</label>
+    </section>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <ul id="results" class="grid"></ul>
+  </main>
+
+  <footer>
+    <p>All jobs are remote and come from <a href="https://remotive.com">Remotive</a> (free public API, delayed by 24 hours).
+    "Inclusion signals" are keywords found in a posting; always confirm accommodations with the employer.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
