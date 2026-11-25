@@ -4,7 +4,7 @@ AbleUp
 A job search web app that helps people with disabilities find remote work. It flags postings that mention inclusion or accommodations, and has accessibility controls (text size, high contrast, keyboard and screen-reader support).
 
 Demo video: <link>
-Live (load balancer): http://<LB01_IP>
+Live (load balancer): https://127.0.0.1:5500/
 API keys / credentials: none needed. The app uses Remotive's free public API and has no login.
 Features
 
